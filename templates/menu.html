@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #0052D4, #4364F7);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #0040C1, #3349E2);
+        }
+
+        p {
+            color: red;
+            margin-top: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #444;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Menu</h1>
+    <form method="POST">
+        <label>Choose an option (1-3):</label>
+        <ul>
+            <li>1. Request File</li>
+            <li>2. Request Image</li>
+            <li>3. Exit</li>
+        </ul>
+        <input type="text" name="choice" placeholder="Enter option number" required>
+
+        <label>Filename (for option 1 or 2):</label>
+        <input type="text" name="filename" placeholder="e.g., report.pdf">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

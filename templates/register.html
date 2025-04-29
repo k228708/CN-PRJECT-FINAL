@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .tab-register {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-register button {
+            background: linear-gradient(to right, #0052D4, #4364F7);
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(to right, #0052D4, #4364F7);
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #4364F7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Register Form</h1>
+     
+        <form method="POST">
+            <input type="text" name="username" required placeholder="Username">
+            <input type="password" name="password" required placeholder="Password">
+            <input type="submit" value="Register">
+            <p>{{ message }}</p>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="/">Login now</a>
+        </div>
+    </div>
+</body>
+</html>

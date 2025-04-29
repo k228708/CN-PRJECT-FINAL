@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+            padding: 10px 30px;
+            border: 2px  black;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #0052D4, #4364F7);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #0040C1, #3349E2);
+        }
+
+        button {
+            background: none;
+            border: none;
+            margin-top: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button a {
+            text-decoration: none;
+            color: #4364F7;
+            font-weight: 600;
+        }
+
+        button a:hover {
+            color: #3349E2;
+        }
+
+        p {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        function validateUsername(input) {
+            const lastChar = input.value.slice(-1);
+            if (/\d/.test(lastChar)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Username!',
+                    text: 'Numbers are not allowed in the username!',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Got it!',
+                    background: '#1e1e2f',
+                    color: '#ffffff'
+                });
+                input.value = input.value.slice(0, -1); // Remove the last wrong character
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>CONNECT TO SERVER</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required 
+                   oninput="validateUsername(this)">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+            {% if message %}
+            <p>{{ message }}</p>
+          {% endif %}
+          
+
+            <button>
+                <a href="/register">Don't have an account? Register here.</a>
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
