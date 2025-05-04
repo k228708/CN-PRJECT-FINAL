@@ -87,7 +87,7 @@ while True:
 
         elif request_type == "REQUEST_FILE":
             filename = credentials.strip()
-            folder_path = r"C:\Users\HP\Desktop"  # <-- Your server's file location
+            folder_path = r"C:\Users\HP\Desktop"  #  server's file location
             file_path = os.path.join(folder_path, filename)
 
             if os.path.isfile(file_path):
@@ -102,7 +102,7 @@ while True:
 
         elif request_type == "REQUEST_IMAGE":
             filename = credentials.strip()
-            folder_path = r"C:\Users\HP\Pictures"  # <-- Your server's images location
+            folder_path = r"C:\Users\HP\Pictures"  # server's images location
             file_path = os.path.join(folder_path, filename)
 
             if os.path.isfile(file_path):
