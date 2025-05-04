@@ -23,7 +23,7 @@ PORT = 5000
 
 # SSL configuration
 context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-context.load_cert_chain(certfile="server.crt", keyfile="server.key")  # Your SSL certs
+context.load_cert_chain(certfile="server.crt", keyfile="server.key")  
 
 # Create server socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
